@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFDEMO21062026"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"is_output_git_adls_accountKey": {
+			"value": ""
+		},
+		"ls_inpiut_blob_connectionString": {
+			"value": ""
+		},
+		"ls_output_adls_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sqlserverjune23poc.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "HRSM"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "saadmin"
+		},
+		"is_git_input_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/Mohitvyagi/ADFCD/refs/heads/main/movies.csv"
+		},
+		"is_output_git_adls_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		},
+		"ls_output_adls_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		}
+	}
+}
