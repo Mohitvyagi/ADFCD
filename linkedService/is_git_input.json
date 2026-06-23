@@ -1,0 +1,12 @@
+{
+	"name": "is_git_input",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://raw.githubusercontent.com/Mohitvyagi/ADFCD/refs/heads/main/movies.csv",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
