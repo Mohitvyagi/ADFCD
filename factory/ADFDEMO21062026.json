@@ -1,0 +1,15 @@
+{
+	"name": "ADFDEMO21062026",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ba99b006-cac3-4de9-8ce5-4b17193dc033",
+		"tenantId": "87e250c2-26b6-4afc-bae3-371a132ec3c0"
+	}
+}

@@ -1,0 +1,82 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_jsonfile_src",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_db",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          EMPLOYEES as (DEPTNO as integer, DNAME as string, LOC as string, STAFF as (EMPNO as integer, ENAME as string, JOB as string, MGR as string, HIREDATE as string, SAL as integer, COMM as string)[])[]",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'singleDocument') ~> source1",
+				"source1 foldDown(unrollMultiple(EMPLOYEES,EMPLOYEES.STAFF),",
+				"     mapColumn(",
+				"          DEPTNO = EMPLOYEES.DEPTNO,",
+				"          DNAME = EMPLOYEES.DNAME,",
+				"          LOC = EMPLOYEES.LOC,",
+				"          STAFF = EMPLOYEES.STAFF",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1",
+				"flatten1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          EMPNO as integer,",
+				"          ENAME as string,",
+				"          JOB as string,",
+				"          MGR as integer,",
+				"          HIREDATE as date,",
+				"          SAL as decimal(7,2),",
+				"          COMM as decimal(7,2),",
+				"          DEPTNO as integer",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     truncate:true,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'allErrors',",
+				"     transactionCommit: 'single',",
+				"     reportSuccessOnError: false,",
+				"     mapColumn(",
+				"          EMPNO = STAFF.EMPNO,",
+				"          ENAME = STAFF.ENAME,",
+				"          JOB = STAFF.JOB,",
+				"          MGR = STAFF.MGR,",
+				"          HIREDATE = STAFF.HIREDATE,",
+				"          SAL = STAFF.SAL,",
+				"          COMM = STAFF.SAL,",
+				"          DEPTNO",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}

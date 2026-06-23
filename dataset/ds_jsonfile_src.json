@@ -1,0 +1,70 @@
+{
+	"name": "ds_jsonfile_src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_inpiut_blob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "employeejsonv1.json",
+				"container": "input"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"EMPLOYEES": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"DEPTNO": {
+								"type": "integer"
+							},
+							"DNAME": {
+								"type": "string"
+							},
+							"LOC": {
+								"type": "string"
+							},
+							"STAFF": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"EMPNO": {
+											"type": "integer"
+										},
+										"ENAME": {
+											"type": "string"
+										},
+										"JOB": {
+											"type": "string"
+										},
+										"MGR": {
+											"type": "null"
+										},
+										"HIREDATE": {
+											"type": "string"
+										},
+										"SAL": {
+											"type": "integer"
+										},
+										"COMM": {
+											"type": "null"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
