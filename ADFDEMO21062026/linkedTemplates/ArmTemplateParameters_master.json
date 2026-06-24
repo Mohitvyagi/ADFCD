@@ -17,7 +17,13 @@
 		"ls_inpiut_blob_connectionString": {
 			"value": ""
 		},
+		"ls_input_sqldb_password": {
+			"value": ""
+		},
 		"ls_output_adls_accountKey": {
+			"value": ""
+		},
+		"ls_output_sqldb_adls_accountKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
@@ -38,7 +44,19 @@
 		"is_output_git_adls_properties_typeProperties_url": {
 			"value": "https://storagejundempadls.dfs.core.windows.net/"
 		},
+		"ls_input_sqldb_properties_typeProperties_server": {
+			"value": "sqlserverjune23poc.database.windows.net"
+		},
+		"ls_input_sqldb_properties_typeProperties_database": {
+			"value": "HRSM"
+		},
+		"ls_input_sqldb_properties_typeProperties_userName": {
+			"value": "saadmin"
+		},
 		"ls_output_adls_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		},
+		"ls_output_sqldb_adls_properties_typeProperties_url": {
 			"value": "https://storagejundempadls.dfs.core.windows.net/"
 		},
 		"containerUri": {

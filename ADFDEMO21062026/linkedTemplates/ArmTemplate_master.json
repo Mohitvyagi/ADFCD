@@ -23,9 +23,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_inpiut_blob'"
 		},
+		"ls_input_sqldb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_input_sqldb'"
+		},
 		"ls_output_adls_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_output_adls'"
+		},
+		"ls_output_sqldb_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_output_sqldb_adls'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -51,7 +59,23 @@
 			"type": "string",
 			"defaultValue": "https://storagejundempadls.dfs.core.windows.net/"
 		},
+		"ls_input_sqldb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlserverjune23poc.database.windows.net"
+		},
+		"ls_input_sqldb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "HRSM"
+		},
+		"ls_input_sqldb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "saadmin"
+		},
 		"ls_output_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagejundempadls.dfs.core.windows.net/"
+		},
+		"ls_output_sqldb_adls_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://storagejundempadls.dfs.core.windows.net/"
 		},
@@ -94,8 +118,14 @@
 					"ls_inpiut_blob_connectionString": {
 						"value": "[parameters('ls_inpiut_blob_connectionString')]"
 					},
+					"ls_input_sqldb_password": {
+						"value": "[parameters('ls_input_sqldb_password')]"
+					},
 					"ls_output_adls_accountKey": {
 						"value": "[parameters('ls_output_adls_accountKey')]"
+					},
+					"ls_output_sqldb_adls_accountKey": {
+						"value": "[parameters('ls_output_sqldb_adls_accountKey')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -115,12 +145,44 @@
 					"is_output_git_adls_properties_typeProperties_url": {
 						"value": "[parameters('is_output_git_adls_properties_typeProperties_url')]"
 					},
+					"ls_input_sqldb_properties_typeProperties_server": {
+						"value": "[parameters('ls_input_sqldb_properties_typeProperties_server')]"
+					},
+					"ls_input_sqldb_properties_typeProperties_database": {
+						"value": "[parameters('ls_input_sqldb_properties_typeProperties_database')]"
+					},
+					"ls_input_sqldb_properties_typeProperties_userName": {
+						"value": "[parameters('ls_input_sqldb_properties_typeProperties_userName')]"
+					},
 					"ls_output_adls_properties_typeProperties_url": {
 						"value": "[parameters('ls_output_adls_properties_typeProperties_url')]"
+					},
+					"ls_output_sqldb_adls_properties_typeProperties_url": {
+						"value": "[parameters('ls_output_sqldb_adls_properties_typeProperties_url')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "ADFDEMO21062026_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFDEMO21062026_ArmTemplate_0')]"
+			]
 		}
 	]
 }
