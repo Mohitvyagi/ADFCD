@@ -8,10 +8,16 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
 		"is_output_git_adls_accountKey": {
+			"value": ""
+		},
+		"ls_adls_multiplefile_input_accountKey": {
 			"value": ""
 		},
 		"ls_inpiut_blob_connectionString": {
@@ -23,10 +29,16 @@
 		"ls_output_adls_accountKey": {
 			"value": ""
 		},
+		"ls_output_multiplefiles_accountKey": {
+			"value": ""
+		},
 		"ls_output_sqldb_adls_accountKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"value": "https://storagejundempadls.dfs.core.windows.net/"
 		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
@@ -44,6 +56,9 @@
 		"is_output_git_adls_properties_typeProperties_url": {
 			"value": "https://storagejundempadls.dfs.core.windows.net/"
 		},
+		"ls_adls_multiplefile_input_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		},
 		"ls_input_sqldb_properties_typeProperties_server": {
 			"value": "sqlserverjune23poc.database.windows.net"
 		},
@@ -54,6 +69,9 @@
 			"value": "saadmin"
 		},
 		"ls_output_adls_properties_typeProperties_url": {
+			"value": "https://storagejundempadls.dfs.core.windows.net/"
+		},
+		"ls_output_multiplefiles_properties_typeProperties_url": {
 			"value": "https://storagejundempadls.dfs.core.windows.net/"
 		},
 		"ls_output_sqldb_adls_properties_typeProperties_url": {
