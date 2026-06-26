@@ -1,0 +1,23 @@
+{
+	"name": "ds_output_multiplesfiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_ourput_multiplefiles",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "output",
+				"fileSystem": "bronzecontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
