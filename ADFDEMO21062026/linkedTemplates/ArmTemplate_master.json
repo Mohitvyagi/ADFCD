@@ -31,9 +31,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_inpiut_blob'"
 		},
+		"ls_input_multiplesfiles_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_input_multiplesfiles'"
+		},
 		"ls_input_sqldb_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_input_sqldb'"
+		},
+		"ls_ourput_multiplefiles_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_ourput_multiplefiles'"
 		},
 		"ls_output_adls_accountKey": {
 			"type": "secureString",
@@ -79,6 +87,10 @@
 			"type": "string",
 			"defaultValue": "https://storagejundempadls.dfs.core.windows.net/"
 		},
+		"ls_input_multiplesfiles_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagejundempadls.dfs.core.windows.net/"
+		},
 		"ls_input_sqldb_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sqlserverjune23poc.database.windows.net"
@@ -90,6 +102,10 @@
 		"ls_input_sqldb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "saadmin"
+		},
+		"ls_ourput_multiplefiles_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagejundempadls.dfs.core.windows.net/"
 		},
 		"ls_output_adls_properties_typeProperties_url": {
 			"type": "string",
@@ -148,8 +164,14 @@
 					"ls_inpiut_blob_connectionString": {
 						"value": "[parameters('ls_inpiut_blob_connectionString')]"
 					},
+					"ls_input_multiplesfiles_accountKey": {
+						"value": "[parameters('ls_input_multiplesfiles_accountKey')]"
+					},
 					"ls_input_sqldb_password": {
 						"value": "[parameters('ls_input_sqldb_password')]"
+					},
+					"ls_ourput_multiplefiles_accountKey": {
+						"value": "[parameters('ls_ourput_multiplefiles_accountKey')]"
 					},
 					"ls_output_adls_accountKey": {
 						"value": "[parameters('ls_output_adls_accountKey')]"
@@ -184,6 +206,9 @@
 					"ls_adls_multiplefile_input_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_multiplefile_input_properties_typeProperties_url')]"
 					},
+					"ls_input_multiplesfiles_properties_typeProperties_url": {
+						"value": "[parameters('ls_input_multiplesfiles_properties_typeProperties_url')]"
+					},
 					"ls_input_sqldb_properties_typeProperties_server": {
 						"value": "[parameters('ls_input_sqldb_properties_typeProperties_server')]"
 					},
@@ -192,6 +217,9 @@
 					},
 					"ls_input_sqldb_properties_typeProperties_userName": {
 						"value": "[parameters('ls_input_sqldb_properties_typeProperties_userName')]"
+					},
+					"ls_ourput_multiplefiles_properties_typeProperties_url": {
+						"value": "[parameters('ls_ourput_multiplefiles_properties_typeProperties_url')]"
 					},
 					"ls_output_adls_properties_typeProperties_url": {
 						"value": "[parameters('ls_output_adls_properties_typeProperties_url')]"
