@@ -1,0 +1,25 @@
+{
+	"name": "jsonsource",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_input_json_file",
+						"type": "DatasetReference"
+					},
+					"name": "jsonsource"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine') ~> jsonsource"
+			]
+		}
+	}
+}

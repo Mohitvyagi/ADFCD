@@ -1,0 +1,20 @@
+{
+	"name": "ds_input_json_file",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_input_json_file",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "employeejsonv1.json",
+				"folderPath": "input",
+				"fileSystem": "bronzecontainer"
+			}
+		},
+		"schema": {}
+	}
+}

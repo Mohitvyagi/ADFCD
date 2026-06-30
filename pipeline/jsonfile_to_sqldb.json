@@ -1,0 +1,9 @@
+{
+	"name": "jsonfile_to_sqldb",
+	"properties": {
+		"folder": {
+			"name": "Piplineclass6"
+		},
+		"annotations": []
+	}
+}
